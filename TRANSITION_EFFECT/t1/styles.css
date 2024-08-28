@@ -1,0 +1,70 @@
+:root {
+    --cyan: #007AE5;
+    --tile-count: 5;
+  }
+  
+  body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #eee;
+  }
+  
+  .wrapper {
+    height: 100vh;
+    text-align: center;
+  }
+  
+  button {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('cutiepie.png'); /* Initial background */
+    background-size: cover;
+    z-index: 1;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .tiles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(var(--tile-count), 1fr);
+    grid-template-rows: repeat(var(--tile-count), 1fr);
+    gap: 0;
+    z-index: 2;
+  }
+  
+  .tile {
+    background-color: var(--cyan);
+    transition: transform 0.7s ease;
+  }
+  
+  .loader--active .tile {
+    transform: scale(1);
+  }
+  
+  button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 3; /* Ensure the button is on top of everything */
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
